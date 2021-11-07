@@ -6,6 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductManagerTest {
 
+    private Product product = new Product();
+    private Book book = new Book();
+    private Smartphone smartphone = new Smartphone();
+
     private ProductManager manager = new ProductManager(new ProductRepository());
 
     Product first = new Book(1, "The green miles", 560, "King");
@@ -254,6 +258,84 @@ class ProductManagerTest {
     void shouldUseEqualsProductOneNotEqualsSix() {
 
         assertNotEquals(one, six);
+    }
+
+    @Test
+    void shouldSetNameProduct() {
+        product.setName("Book");
+        String actual = product.getName();
+        String expected = "Book";
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void shouldSetIdProduct() {
+        product.setId(15);
+        int actual = product.getId();
+        int expected = 15;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void shouldSetPriceProduct() {
+        product.setPrice(1550);
+        int actual = product.getPrice();
+        int expected = 1550;
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void shouldHashCodeSmartphone() {
+        int smartHash5 = fifth.hashCode();
+        int smartHash7 = seventh.hashCode();
+        assertNotEquals(smartHash5, smartHash7);
+    }
+
+    @Test
+    void shouldHashCodeBook() {
+        int bookHash3 = third.hashCode();
+        int bookHash1 = first.hashCode();
+        assertNotEquals(bookHash3, bookHash1);
+    }
+
+    @Test
+    void shouldToStringProduct() {
+        String prod1 = new Product(89, "Watch", 4550).toString();
+        String prod3 = new Product(18, "Watch", 4550).toString();
+
+        assertNotEquals(prod1, prod3);
+    }
+
+    @Test
+    void shouldToStringBook() {
+        String prod1 = one.toString();
+        String prod3 = three.toString();
+
+        assertNotEquals(prod1, prod3);
+    }
+
+    @Test
+    void shouldSetAuthorBook() {
+        book.setAuthor("Nabokov");
+        String actual = book.getAuthor();
+        String expected = "Nabokov";
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    void shouldToStringSmartphone() {
+        String prod1 = sixth.toString();
+        String prod3 = eighth.toString();
+
+        assertNotEquals(prod1, prod3);
+    }
+
+    @Test
+    void shouldSetProducerSmartphone() {
+        smartphone.setProducer("Russia");
+        String actual = smartphone.getProducer();
+        String expected = "Russia";
+        assertEquals(actual, expected);
     }
 
 

@@ -232,6 +232,12 @@ class ProductManagerTest {
 
         assertFalse(first.equals(second));
     }
+    @Test
+    void shouldUseEqualsSmartBook() {
+
+        assertTrue(first.equals(first));
+    }
+
 
     @Test
     void shouldUseEqualsBookWithNull() {

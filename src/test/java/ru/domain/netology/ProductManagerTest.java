@@ -211,6 +211,19 @@ class ProductManagerTest {
         assertFalse(seventh.equals(sixth));
     }
 
+    @Test
+    void shouldUseEqualsSmartphone() {
+
+        assertTrue(sixth.equals(sixth));
+    }
+
+    @Test
+    void shouldUseEqualsSmartphoneBook() {
+
+
+        assertFalse(seventh.equals(first));
+    }
+
 
     @Test
     void shouldUseEqualsDifferentBook() {
@@ -228,6 +241,31 @@ class ProductManagerTest {
 
         fourth = null;
         assertFalse(third.equals(fourth));
+    }
+
+    @Test
+    void shouldUseEqualsProduct() {
+
+        Product prod1 = new Product(22, "Prod1", 300);
+
+        assertTrue(prod1.equals(prod1));
+    }
+
+    @Test
+    void shouldUseEqualsProductWithNull() {
+
+        Product prod1 = new Product(22, "Prod1", 300);
+
+        assertFalse(prod1.equals(null));
+    }
+
+    @Test
+    void shouldUseEqualsProductBook() {
+
+        Product prod1 = new Product(22, "Prod1", 300);
+
+
+        assertFalse(prod1.equals(book));
     }
 
     @Test

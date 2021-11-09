@@ -1,4 +1,9 @@
-package ru.domain.netology;
+package ru.netology.manager;
+
+import ru.netology.domain.Book;
+import ru.netology.domain.Product;
+import ru.netology.domain.Smartphone;
+import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
     private ProductRepository repository;
@@ -14,12 +19,6 @@ public class ProductManager {
 
     public Product[] getAll() {
         Product[] items = repository.findAll();
-//        Product[] result = new Product[items.length];
-//        for (int i = 0; i < result.length; i++) {
-//            int index = items.length - 1 - i;
-//            result[i] = items[index];
-//        }
-//        return result;
         return items;
     }
 
